@@ -10,6 +10,8 @@ import { Model } from "~/Model"
 import { Axes } from "~/Axes"
 import { Description } from "~/Description"
 
+import urlDogue from "~/dogue.gltf?url"
+
 export default function App() {
   return (
     <>
@@ -75,7 +77,7 @@ function Scene() {
       {/* https://market.pmnd.rs/model/dogue */}
       <Model
         ref={modelRef}
-        url="/dogue.gltf"
+        url={urlDogue}
         position={[2, 0, 0]}
         rotation={[0, -2, 0]}
       />
