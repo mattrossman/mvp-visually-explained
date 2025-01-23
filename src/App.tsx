@@ -27,6 +27,15 @@ export default function App() {
         </Suspense>
       </Canvas>
       <Description />
+      <div className="fixed bottom-0 inset-x-0 text-gray-400 p-10 text-sm">
+        {"Made by "}
+        <a
+          className="underline hover:text-white"
+          href="https://mattrossman.com"
+        >
+          Matt Rossman
+        </a>
+      </div>
     </>
   )
 }
