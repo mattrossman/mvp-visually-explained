@@ -32,7 +32,7 @@ const components = {
 export function Description() {
   const snap = useSnapshot(state)
   const transition = useTransition(snap.step, {
-    from: { opacity: 0, position: "absolute" },
+    from: { opacity: 0, position: "absolute" as const },
     enter: { opacity: 1 },
     leave: { opacity: 0 },
     config: {
