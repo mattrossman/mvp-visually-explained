@@ -94,6 +94,10 @@ function lerpMatrix(
   out: THREE.Matrix4,
 ) {
   for (let i = 0; i < out.elements.length; ++i) {
-    out.elements[i] = THREE.MathUtils.lerp(a.elements[i], b.elements[i], t)
+    out.elements[i] = lerp(a.elements[i], b.elements[i], t)
   }
+}
+
+function lerp(x: number, y: number, t: number) {
+  return (1 - t) * x + t * y
 }

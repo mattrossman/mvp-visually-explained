@@ -1,10 +1,12 @@
-import { Gltf, OrbitControls } from "@react-three/drei"
+import { Suspense } from "react"
+import { OrbitControls } from "@react-three/drei"
 import { Canvas } from "@react-three/fiber"
 import { useSnapshot } from "valtio"
 
 import { state } from "~/state"
 import { useMVP } from "~/useMVP"
 
+import { Model } from "~/Model"
 import { Axes } from "~/Axes"
 import { Description } from "~/Description"
 
@@ -14,12 +16,15 @@ export default function App() {
       <Canvas
         style={{ position: "fixed", inset: 0, backgroundColor: "#111111" }}
         camera={{ position: [7, 7, 7] }}
+        dpr={[1, 2]}
       >
-        <OrbitControls autoRotate />
-        <Axes />
-        <gridHelper />
+        <Suspense fallback={null}>
+          <OrbitControls autoRotate />
+          <Axes />
 
-        <Scene />
+          <gridHelper />
+          <Scene />
+        </Suspense>
       </Canvas>
       <Description />
     </>
@@ -33,14 +38,14 @@ function Scene() {
 
   return (
     <MVPScene>
-      <ambientLight intensity={0.5 * Math.PI} />
-      <pointLight position={[1, 2, 3]} intensity={0.5 * Math.PI} />
-      <pointLight position={[1, 2, -3]} intensity={0.5 * Math.PI} />
+      <ambientLight intensity={0.5} />
+      <pointLight position={[1, 2, 3]} intensity={0.5} />
+      <pointLight position={[1, 2, -3]} intensity={0.5} />
 
       {/* https://market.pmnd.rs/model/dogue */}
-      <Gltf
+      <Model
         ref={modelRef}
-        src="/dogue.gltf"
+        url="/dogue.gltf"
         position={[2, 0, 0]}
         rotation={[0, -2, 0]}
       />
@@ -51,9 +56,7 @@ function Scene() {
         near={1}
         position={[-2, 2, 3]}
         onUpdate={(c) => c.lookAt(2, 1, 0)}
-      >
-        <axesHelper />
-      </perspectiveCamera>
+      />
     </MVPScene>
   )
 }
