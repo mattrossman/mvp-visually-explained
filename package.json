@@ -1,6 +1,6 @@
 {
-  "name": "r3f-vite-ts",
-  "private": true,
+  "name": "mvp-visually-explained",
+  "author": "Matt Rossman",
   "version": "0.0.0",
   "type": "module",
   "scripts": {
