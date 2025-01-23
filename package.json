@@ -9,11 +9,16 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@react-spring/three": "^9.7.5",
+    "@react-spring/web": "^9.7.5",
     "@react-three/drei": "^9.114.0",
     "@react-three/fiber": "^8.17.8",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
-    "three": "^0.168.0"
+    "react-markdown": "^9.0.3",
+    "three": "^0.168.0",
+    "twind": "^0.16.19",
+    "valtio": "^2.1.2"
   },
   "devDependencies": {
     "@types/react": "^18.3.9",

@@ -1,7 +1,1 @@
-# React-Three-Fiber + Vite + TypeScript Template
-
-```console
-npx tiged mattrossman/r3f-vite-ts
-```
-
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/mattrossman/r3f-vite-ts)
+https://x.com/the_ross_man/status/1401894282869579782
